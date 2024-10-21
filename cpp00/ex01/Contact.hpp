@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 00:22:51 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/21 17:08:21 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/21 17:44:07 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ class Contact
 
 		Contact();
 		~Contact();
-		void		set_firstname(std::string firstname, Contact &contact);
-		void		set_lastname(std::string lastname, Contact &contact);
-		void		set_nickname(std::string nickname, Contact &contact);
-		void		set_phone_number(std::string phone_number, Contact &contact);
-		void		set_darkest_secret(std::string darkest_secret, Contact &contact);
-		void		remove_firstname(Contact &contact);
-		void		remove_lastname(Contact &contact);
-		void		remove_nickname(Contact &contact);
-		void		remove_phone_number(Contact &contact);
-		void		remove_darkest_secret(Contact &contact);
-		void		print_contact(Contact &contact);
+		void		set_firstname(std::string firstname);
+		void		set_lastname(std::string lastname);
+		void		set_nickname(std::string nickname);
+		void		set_phone_number(std::string phone_number);
+		void		set_darkest_secret(std::string darkest_secret);
+		void		remove_firstname();
+		void		remove_lastname();
+		void		remove_nickname();
+		void		remove_phone_number();
+		void		remove_darkest_secret();
+		void		print_contact();
 
 	private :
 

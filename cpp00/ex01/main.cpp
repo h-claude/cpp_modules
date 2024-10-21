@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 00:17:52 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/21 21:00:47 by hclaude          ###   ########.fr       */
+/*   Created: 2024/10/21 17:40:16 by hclaude           #+#    #+#             */
+/*   Updated: 2024/10/21 20:58:34 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-# define PHONEBOOK_HPP
-
-#include "Contact.hpp"
-#include <iostream>
-#include <string>
-
-class PhoneBook
+int main(void)
 {
-	public :
+	PhoneBook Blabla;
 
-		PhoneBook();
-		~PhoneBook();
-		void		add_contact();
-		void		remove_contact(int index);
-		void		search_contact(int index);
-
-	private :
-
-		int			_index;
-		int			_older;
-		Contact		_phonebook[8];
-};
-
-#endif
-
+	Blabla.add_contact();
+}
