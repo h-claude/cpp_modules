@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:40:16 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/22 21:17:35 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:07:37 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,9 @@ int main(void)
 		std::string command;
 		std::cout << "PUT THE COMMAND HERE ! :" << std::endl;
 		std::getline(std::cin, command);
-		if (std::cin.fail())
-		{
-			std::cout << "Error" << std::endl;
-			return (0);
-		}
-		if (command == "EXIT")
+		if (command.empty())
+			std::cout << "Empty input. Please retry !" << std::endl;
+		else if (command == "EXIT")
 			break;
 		else if (command == "ADD")
 			Blabla.add_contact();

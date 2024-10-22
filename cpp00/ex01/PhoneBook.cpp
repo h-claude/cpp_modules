@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 00:17:43 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/22 21:18:16 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:04:43 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,13 @@ std::string get_content()
 	while (1)
 	{
 		std::getline(std::cin, content, '\n');
-		if (content == "\n")
+		if (content.empty())
 		{
-			std::cout << "Empty input" << std::endl;
-			std::cin.ignore(10000, '\n');
+			std::cout << "Empty input. Please retry !" << std::endl << std::endl;
 			std::cin.clear();
-		}
-		if (std::cin.fail())
-		{
-			std::cin.clear();
-			std::cin.ignore(10000, '\n');
-			return (NULL);
 		}
 		else
 			return (content);
-
 	}
 }
 
