@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 00:21:16 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/21 18:41:39 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/22 17:38:32 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Contact::Contact()
 {
-	std::cout << "Class created" << std::endl;
 }
 
 Contact::~Contact()
 {
-	std::cout << "Class Destroyed" << std::endl;
 }
 
 void	Contact::set_firstname(std::string firstname)
@@ -72,16 +70,27 @@ void	Contact::remove_darkest_secret()
 	this->_darkest_secret.clear();
 }
 
-void	Contact::print_contact()
+std::string	Contact::get_firstname() const
 {
-	std::cout << this->_first_name;
-	std::cout << " | ";
-	std::cout << this->_last_name;
-	std::cout << " | ";
-	std::cout << this->_nickname;
-	std::cout << " | ";
-	std::cout << this->_phone_number;
-	std::cout << " | ";
-	std::cout << this->_darkest_secret;
-	std::cout << std::endl;
+	return this->_first_name;
+}
+
+std::string	Contact::get_lastname() const
+{
+	return this->_last_name;
+}
+
+std::string	Contact::get_nickname() const
+{
+	return this->_nickname;
+}
+
+std::string	Contact::get_phone_number() const
+{
+	return this->_phone_number;
+}
+
+std::string	Contact::get_darkest_secret() const
+{
+	return this->_darkest_secret;
 }
