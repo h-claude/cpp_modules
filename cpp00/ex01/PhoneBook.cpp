@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 00:17:43 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/22 22:04:43 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/27 23:36:20 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,22 @@ void	PhoneBook::remove_contact(int index)
 	std::cout << "Contact deleted" << std::endl;
 }
 
+bool	is_number(std::string number)
+{
+	for (size_t i = 0; i < number.size(); i++)
+	{
+		if (number[i] < 48 || number[i] > 57)
+			return (false);
+	}
+	return (true);
+}
+
 void	PhoneBook::search_contact()
 {
-	std::cout << std::setw(5) << "Index" << " | "
-			  << std::setw(15) << "First name" << " | "
-			  << std::setw(15) << "Last name" << " | "
-			  << std::setw(15) << "Nick name" << " | " << std::endl;
+	std::cout << std::setw(10) << "Index" << "|"
+			  << std::setw(10) << "First name" << "|"
+			  << std::setw(10) << "Last name" << "|"
+			  << std::setw(10) << "Nick name" << "|" << std::endl;
 	for (int i = 0; i < this->_nb_contact; i++)
 	{
 		std::string firstname = _phonebook[i].get_firstname();
@@ -101,36 +111,30 @@ void	PhoneBook::search_contact()
 		std::string nickname = _phonebook[i].get_nickname();
 		if (nickname.size() > 10)
 			nickname = nickname.substr(0, 9) + ".";
-		std::cout << std::setw(5) << i + 1 << " | "
-				<< std::setw(15) <<  firstname << " | "
-				<< std::setw(15) << lastname << " | "
-				<< std::setw(15) << nickname << " | " << std::endl << std::endl;
+		std::cout << std::setw(10) << i + 1 << "|"
+				<< std::setw(10) <<  firstname << "|"
+				<< std::setw(10) << lastname << "|"
+				<< std::setw(10) << nickname << "|" << std::endl;
 	}
 	std::cout << "Put the index of the contact you want to see :" << std::endl;
-	int i;
-	std::cin >> i;
-	if (std::cin.fail())
+	std::string i;
+	if (!getline(std::cin, i))
 	{
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
+		std::cerr << "Error with getline" << std::endl;
 		return ;
 	}
-	if (std::cin.good() && i >= 0 && i <= _nb_contact)
+	if (i.size() == 1 && is_number(i) && (int)i[0] - 48 > 0 && (int)i[0] - 48 <= _nb_contact)
 	{
-		std::cout << "First name : " << _phonebook[i - 1].get_firstname() << std::endl;
-		std::cout << "Last name : " << _phonebook[i - 1].get_lastname() << std::endl;
-		std::cout << "Nick name : " << _phonebook[i - 1].get_nickname() << std::endl;
-		std::cout << "Phone number : " << _phonebook[i - 1].get_phone_number() << std::endl;
-		std::cout << "Darkest secret : " << _phonebook[i - 1].get_darkest_secret() << std::endl << std::endl;
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
+		std::cout << "First name : " << _phonebook[(int)i[0] - 48 - 1].get_firstname() << std::endl;
+		std::cout << "Last name : " << _phonebook[(int)i[0] - 48 - 1].get_lastname() << std::endl;
+		std::cout << "Nick name : " << _phonebook[(int)i[0] - 48 - 1].get_nickname() << std::endl;
+		std::cout << "Phone number : " << _phonebook[(int)i[0] - 48 - 1].get_phone_number() << std::endl;
+		std::cout << "Darkest secret : " << _phonebook[(int)i[0] - 48 - 1].get_darkest_secret() << std::endl << std::endl;
 		return ;
 	}
 	else
 	{
-		std::cout << "Index out of range" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
+		std::cerr << "Index out of range" << std::endl;
 		return ;
 	}
 }
