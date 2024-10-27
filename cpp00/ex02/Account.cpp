@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:09:20 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/24 16:31:32 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:42:34 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,11 @@ bool Account::makeWithdrawal(int withdrawal)
 
 void Account::_displayTimestamp()
 {
-	std::time_t	epoch = std::time(NULL);
-	std::tm*	local_time = std::localtime(&epoch);
+	time_t		epoch = time(NULL);
+	tm*			local_time = localtime(&epoch);
 
 	char buffer[20];
-	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", local_time);
+	strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", local_time);
 	std::cout << buffer << " ";
 }
 

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 18:04:31 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/26 17:31:54 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:14:16 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	}
 
 	std::ifstream inputFile(filename.c_str());
-	if (!inputFile.is_open())
+	if (!inputFile.fail())
 	{
 		std::cerr << "Fail open" << std::endl;
 		return (1);
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 
 	std::string	outfileName = filename + ".replace";
 	std::ofstream outFile(outfileName.c_str());
-	if (!outFile.is_open())
+	if (outFile.fail())
 	{
 		inputFile.close();
 		std::cerr << "Fail create outputfile" << std::endl;
