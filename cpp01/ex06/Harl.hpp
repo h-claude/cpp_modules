@@ -6,12 +6,11 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:41:51 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/26 19:09:08 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/28 12:55:55 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -39,5 +38,3 @@ class Harl
 			std::cout << "[ ERROR ]" << std::endl << "This is unacceptable! I want to speak to the manager now." << std::endl << std::endl;
 		}
 } ;
-
-#endif
