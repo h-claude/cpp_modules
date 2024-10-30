@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:15:24 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/25 17:42:46 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:32:59 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanB::HumanB(std::string name)
 {
 	this->_name = name;
-	this->_weapon = nullptr;
+	this->_weapon = NULL;
 }
 
 HumanB::HumanB(std::string name, Weapon weapon)

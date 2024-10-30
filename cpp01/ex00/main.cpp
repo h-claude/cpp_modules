@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:49:59 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/24 18:27:02 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:24:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	Zombie	*zombie = newZombie("Pablo");
+	Zombie	*pablo = newZombie("Pablo");
 	randomChump("Jules");
 	Zombie Roman("Roman");
 	Roman.announce();
@@ -22,6 +22,6 @@ int main(void)
 	lele.announce();
 	Zombie RandomZombie;
 	RandomZombie.announce();
-	zombie->announce();
-	delete zombie;
+	pablo->announce();
+	delete pablo;
 }

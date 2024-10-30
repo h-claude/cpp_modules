@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:15:26 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/25 17:12:46 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:31:22 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon(){}
 
-std::string	Weapon::getType()
+const std::string	&Weapon::getType() const
 {
 	return (_type);
 }

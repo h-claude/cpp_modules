@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 18:04:31 by hclaude           #+#    #+#             */
-/*   Updated: 2024/10/27 15:14:16 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/10/30 16:31:40 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ void replace_string(std::ifstream& inputFile, std::ofstream& outputFile, std::st
 	size_t		i_s1;
 	size_t		len_s1;
 	size_t		i = 0;
-	bool		empty;
 
 	len_s1 = s1.length();
 
-	empty = std::getline(inputFile, line);
-	while (empty)
+	std::getline(inputFile, line);
+	if (inputFile.eof())
+	{
+		std::cerr << "File is empty" << std::endl;
+		return;
+	}
+	while (1)
 	{
 		i_s1 = line.find(s1);
 		if (i_s1 == std::string::npos)
@@ -35,14 +39,15 @@ void replace_string(std::ifstream& inputFile, std::ofstream& outputFile, std::st
 			while (i < line.length())
 			{
 				if (i == i_s1)
-					outputFile << s2, i += len_s1, i_s1 = line.find(s1);
+					outputFile << s2, i += len_s1, i_s1 = line.find(s1, i);
 				else
 					outputFile << line[i], i++;
 			}
 		}
-		empty = std::getline(inputFile, line);
-		if (empty)
+		if (std::getline(inputFile, line))
 			outputFile << std::endl;
+		else
+			break;
 		i = 0;
 	}
 }
@@ -70,7 +75,7 @@ int main(int argc, char **argv)
 	}
 
 	std::ifstream inputFile(filename.c_str());
-	if (!inputFile.fail())
+	if (!inputFile.is_open() || inputFile.fail())
 	{
 		std::cerr << "Fail open" << std::endl;
 		return (1);
