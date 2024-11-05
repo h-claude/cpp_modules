@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/05 20:23:34 by hclaude          ###   ########.fr       */
+/*   Created: 2024/11/05 18:31:54 by hclaude           #+#    #+#             */
+/*   Updated: 2024/11/05 19:27:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-	ClapTrap	Peter("Peter");
-	ScavTrap	Jerome("Jerome");
+	public :
 
-	Peter.attack("The sky");
-	Jerome.attack("The floor");
-	Jerome.guardGate();
-	Jerome.guardGate();
-}
+		FragTrap(const std::string& name);
+		FragTrap(const FragTrap& cpy);
+		~FragTrap();
+
+		FragTrap&	operator=(const FragTrap& src);
+		void		highFivesGuys(void);
+
+};

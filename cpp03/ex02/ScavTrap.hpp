@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/05 20:23:34 by hclaude          ###   ########.fr       */
+/*   Created: 2024/11/04 18:18:50 by hclaude           #+#    #+#             */
+/*   Updated: 2024/11/04 19:15:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	Peter("Peter");
-	ScavTrap	Jerome("Jerome");
+	public :
 
-	Peter.attack("The sky");
-	Jerome.attack("The floor");
-	Jerome.guardGate();
-	Jerome.guardGate();
-}
+		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap& cpy);
+		~ScavTrap();
+
+		ScavTrap&	operator=(const ScavTrap& src);
+		
+		void		guardGate();
+		void		attack(const std::string& name);
+		
+	private :
+	
+		bool	_guardGateState;
+
+};

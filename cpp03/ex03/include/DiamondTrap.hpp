@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/05 20:23:34 by hclaude          ###   ########.fr       */
+/*   Created: 2024/11/05 21:27:01 by hclaude           #+#    #+#             */
+/*   Updated: 2024/11/05 21:27:18 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#pragma once
 
-int main(void)
-{
-	ClapTrap	Peter("Peter");
-	ScavTrap	Jerome("Jerome");
-
-	Peter.attack("The sky");
-	Jerome.attack("The floor");
-	Jerome.guardGate();
-	Jerome.guardGate();
-}
+#include <iostream>
+#include <string>
