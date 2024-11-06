@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 01:37:22 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/04 03:41:04 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/06 13:35:12 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,12 @@ int main( void ) {
 	std::cout << "c: " << c << std::endl << std::endl;
 	std::cout << "min(c, d): " << Fixed::min(c, d) << std::endl;
 	std::cout << "max(c, d): " << Fixed::max(c, d) << std::endl;
+
+	// divsion by 0
+	//Fixed e(42);
+	//Fixed f(0);
+	//std::cout << std::endl << "e: " << e << std::endl;
+	//std::cout << "f: " << f << std::endl;
+	//std::cout << "e / f: " << e / f << std::endl;
 	return 0;
 }
