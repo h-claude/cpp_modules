@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:06:15 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/04 19:21:00 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/07 15:46:16 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,6 @@ void		ClapTrap::sethitPoints(int hitPoints)
 		_hitPoints = 0;
 		return;
 	}
-	if (hitPoints > 10)
-	{
-		_hitPoints = 10;
-		return;
-	}
 	_hitPoints = hitPoints;
 }
 
@@ -79,11 +74,6 @@ void		ClapTrap::setenergyPoints(int energyPoints)
 	if (energyPoints < 0)
 	{
 		_energyPoints = 0;
-		return ;
-	}
-	if (energyPoints > 10)
-	{
-		_energyPoints = 10;
 		return ;
 	}
 	_energyPoints = energyPoints;
