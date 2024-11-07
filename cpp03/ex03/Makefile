@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude/
 
-SRC = main.cpp src/ClapTrap.cpp src/ScavTrap.cpp src/FragTrap.cpp
+SRC = main.cpp src/ClapTrap.cpp src/ScavTrap.cpp src/FragTrap.cpp src/DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
