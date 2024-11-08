@@ -6,11 +6,19 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:31:52 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/05 20:22:56 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/09 00:11:33 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap() : ClapTrap()
+{
+	this->_attackDamage = 30;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	std::cout << "FragTrap " << _name << " has been created!" << std::endl;
+}
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {

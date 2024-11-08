@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:53:08 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 17:01:01 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/08 23:56:10 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class ClapTrap
 {
 	public :
 
+		ClapTrap();
 		ClapTrap(const std::string name);
 		ClapTrap(const ClapTrap& src);
 		~ClapTrap();

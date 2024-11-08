@@ -6,11 +6,20 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:32 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/04 19:19:24 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/09 00:11:47 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	this->_attackDamage = 20;
+	this->_energyPoints = 50;
+	this->_hitPoints = 100;
+	this->_guardGateState = false;
+	std::cout << "ScavTrap " << _name << " has been created!" << std::endl;
+}
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
@@ -53,7 +62,7 @@ void	ScavTrap::guardGate()
 	if (_guardGateState == true)
 	{
 		std::cout << "ScavTrap " << _name << " is already Guard Gate." << std::endl;
-		return ;	
+		return ;
 	}
 	std::cout << "ScavTrap " << _name << " is Guard Gate." << std::endl;
 	this->_guardGateState = true;
@@ -66,7 +75,7 @@ void	ScavTrap::attack(const std::string& target)
 	if (isDead(*this))
 	{
 		std::cout << "ScavTrap "<< _name << "Im dead, I cant attack!" << std::endl;
-		return;	
+		return;
 	}
 	this->setenergyPoints(--_energyPoints);
 	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;

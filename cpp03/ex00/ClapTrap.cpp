@@ -6,11 +6,16 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:06:15 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/04 17:48:12 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/08 23:58:52 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+	std::cout << _name << " has been created." << std::endl;
+}
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
@@ -129,7 +134,7 @@ void	ClapTrap::attack(const std::string& target)
 	if (isDead(*this))
 	{
 		std::cout << "Im dead, I cant attack!" << std::endl;
-		return;	
+		return;
 	}
 	this->setenergyPoints(--_energyPoints);
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
