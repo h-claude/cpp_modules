@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/05 20:23:34 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:36:07 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,23 @@
 
 int main(void)
 {
-	ClapTrap	Peter("Peter");
-	ScavTrap	Jerome("Jerome");
+	{
+		ClapTrap	clap("Je suis monsieur clap");
+		ClapTrap	clap2(clap);
 
-	Peter.attack("The sky");
-	Jerome.attack("The floor");
-	Jerome.guardGate();
-	Jerome.guardGate();
+		clap.attack("un ennemi");
+		clap.takeDamage(5);
+		clap.beRepaired(3);
+		clap.takeDamage(10);
+	}
+	{
+		ScavTrap	scav("Je suis monsieur scav");
+		ScavTrap	scav2(scav);
+
+		scav.attack("un ennemi");
+		scav.takeDamage(5);
+		scav.beRepaired(3);
+		scav.guardGate();
+		scav.takeDamage(1000);
+	}
 }
