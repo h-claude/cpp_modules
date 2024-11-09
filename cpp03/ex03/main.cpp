@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 16:36:48 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/09 17:24:15 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 int main(void)
 {
 	{
+		std::cout << std::endl << "=+=+=+= ClapTrap: =+=+=+=" << std::endl << std::endl;
+
 		ClapTrap	clap("Je suis monsieur clap");
 		ClapTrap	clap2(clap);
 
@@ -27,6 +29,8 @@ int main(void)
 		clap.takeDamage(10);
 	}
 	{
+		std::cout << std::endl << "=+=+=+= ScavTrap: =+=+=+=" << std::endl << std::endl;
+
 		ScavTrap	scav("Je suis monsieur scav");
 		ScavTrap	scav2(scav);
 
@@ -37,6 +41,8 @@ int main(void)
 		scav.takeDamage(1000);
 	}
 	{
+		std::cout << std::endl << "=+=+=+= FragTrap: =+=+=+=" << std::endl << std::endl;
+
 		FragTrap	frag("Je suis monsieur frag");
 		FragTrap	frag2(frag);
 
@@ -47,6 +53,8 @@ int main(void)
 		frag.takeDamage(1000);
 	}
 	{
+		std::cout << std::endl << "=+=+=+= DiamondTrap: =+=+=+=" << std::endl << std::endl;
+
 		DiamondTrap	diamond("Je suis monsieur diamond");
 		DiamondTrap	diamond2(diamond);
 
@@ -57,5 +65,18 @@ int main(void)
 		diamond.highFivesGuys();
 		diamond.whoAmI();
 		diamond.takeDamage(1000);
+	}
+	{
+		std::cout << std::endl << "=+=+=+= Default constructors: =+=+=+=" << std::endl << std::endl;
+		// default constructors
+		ClapTrap	clap;
+		ScavTrap	scav;
+		FragTrap	frag;
+		DiamondTrap	diamond;
+
+		clap.attack("un ennemi");
+		scav.attack("un ennemi");
+		frag.attack("un ennemi");
+		diamond.attack("un ennemi");
 	}
 }
