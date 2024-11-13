@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:18:50 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/10 17:16:17 by hclaude          ###   ########.fr       */
+/*   Created: 2024/11/08 16:53:56 by hclaude           #+#    #+#             */
+/*   Updated: 2024/11/13 18:48:44 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
-class ScavTrap : virtual public ClapTrap
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
 {
 	public :
 
-		ScavTrap();
-		ScavTrap(const std::string& name);
-		ScavTrap(const ScavTrap& cpy);
-		~ScavTrap();
+		Cat();
+		Cat(const Cat& cpy);
+		virtual ~Cat();
 
-		ScavTrap&	operator=(const ScavTrap& src);
+		Cat&	operator=(const Cat& src);
 
-		void		guardGate();
-		void		attack(const std::string& name);
-
-	protected :
-
-		static const int	_initHitPoints = 100;
-		static const int	_initEnergyPoints = 50;
-		static const int	_initAttackDamage = 20;
+		void	makeSound() const;
+		void	setIdea(int index, const std::string& idea);
+		std::string	getIdea(int index) const;
 
 	private :
 
-		bool	_guardGateState;
+		Brain*	_brain;
 
 };

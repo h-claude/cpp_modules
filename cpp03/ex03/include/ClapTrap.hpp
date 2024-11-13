@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:53:08 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 23:56:34 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:10:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ class ClapTrap
 
 		std::string _name;
 		int			_hitPoints;
+		static const int	_initHitPoints = 10;
 		int			_energyPoints;
+		static const int	_initEnergyPoints = 10;
 		int			_attackDamage;
+		static const int	_initAttackDamage = 0;
 };
 
 bool	enoughEnergy(ClapTrap& object);

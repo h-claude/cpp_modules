@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:32 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/09 00:11:47 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:13:37 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_attackDamage = 20;
-	this->_energyPoints = 50;
-	this->_hitPoints = 100;
+	this->_attackDamage = ScavTrap::_initAttackDamage;
+	this->_energyPoints = ScavTrap::_initEnergyPoints;
+	this->_hitPoints = ScavTrap::_initHitPoints;
 	this->_guardGateState = false;
 	std::cout << "ScavTrap " << _name << " has been created!" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	this->_attackDamage = 20;
-	this->_energyPoints = 50;
-	this->_hitPoints = 100;
+	this->_attackDamage = ScavTrap::_initAttackDamage;
+	this->_energyPoints = ScavTrap::_initEnergyPoints;
+	this->_hitPoints = ScavTrap::_initHitPoints;
 	this->_guardGateState = false;
 	std::cout << "ScavTrap " << _name << " has been created!" << std::endl;
 }

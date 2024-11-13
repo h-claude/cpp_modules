@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:08:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/09 17:24:15 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/10 16:38:22 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ int main(void)
 		ClapTrap	clap("Je suis monsieur clap");
 		ClapTrap	clap2(clap);
 
+		std::cout << std::endl;
+		std::cout << clap.getName() << std::endl;
+		std::cout << clap.gethitPoints() << std::endl;
+		std::cout << clap.getenergyPoints() << std::endl;
+		std::cout << clap.getattackDamage() << std::endl;
+		std::cout << std::endl;
+
 		clap.attack("un ennemi");
 		clap.takeDamage(5);
 		clap.beRepaired(3);
@@ -33,6 +40,13 @@ int main(void)
 
 		ScavTrap	scav("Je suis monsieur scav");
 		ScavTrap	scav2(scav);
+
+		std::cout << std::endl;
+		std::cout << scav.getName() << std::endl;
+		std::cout << scav.gethitPoints() << std::endl;
+		std::cout << scav.getenergyPoints() << std::endl;
+		std::cout << scav.getattackDamage() << std::endl;
+		std::cout << std::endl;
 
 		scav.attack("un ennemi");
 		scav.takeDamage(5);
@@ -46,6 +60,13 @@ int main(void)
 		FragTrap	frag("Je suis monsieur frag");
 		FragTrap	frag2(frag);
 
+		std::cout << std::endl;
+		std::cout << frag.getName() << std::endl;
+		std::cout << frag.gethitPoints() << std::endl;
+		std::cout << frag.getenergyPoints() << std::endl;
+		std::cout << frag.getattackDamage() << std::endl;
+		std::cout << std::endl;
+
 		frag.attack("un ennemi");
 		frag.takeDamage(5);
 		frag.beRepaired(3);
@@ -57,6 +78,13 @@ int main(void)
 
 		DiamondTrap	diamond("Je suis monsieur diamond");
 		DiamondTrap	diamond2(diamond);
+
+		std::cout << std::endl;
+		std::cout << diamond.getName() << std::endl;
+		std::cout << diamond.gethitPoints() << std::endl;
+		std::cout << diamond.getenergyPoints() << std::endl;
+		std::cout << diamond.getattackDamage() << std::endl;
+		std::cout << std::endl;
 
 		diamond.attack("un ennemi");
 		diamond.takeDamage(5);
