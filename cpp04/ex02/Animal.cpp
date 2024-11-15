@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:47:40 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/14 14:45:39 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/14 15:38:31 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ Animal&	Animal::operator=(const Animal& src)
 	this->_type = src._type;
 	std::cout << "Class Animal : " << _type << " has been assigned!" << std::endl;
 	return (*this);
-}
-
-void	Animal::makeSound() const
-{
-	std::cout << "Class Animal : " << _type << " try to make a weird sound!" << std::endl;
 }
 
 std::string	Animal::getType() const
