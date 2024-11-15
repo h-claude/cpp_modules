@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:06:31 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/14 19:42:23 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/15 20:53:37 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <iostream>
 #include <string>
 
-#include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
