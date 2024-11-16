@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:57:29 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/15 20:58:49 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/16 18:02:38 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,12 @@ class ICharacter;
 
 class AMateria
 {
-	protected :
-
-		std::string _type;
-
 	public :
 
 		AMateria();
 		AMateria(std::string const & type);
 		AMateria(const AMateria& cpy);
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria& operator=(const AMateria& src);
 
@@ -38,5 +34,9 @@ class AMateria
 
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target) const;
+	protected :
+
+		std::string _type;
+
 
 };

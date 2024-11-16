@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude/ -g3
 
-SRC = main.cpp AMateria.cpp ICharacter.cpp IMateriaSource.cpp Ice.cpp Cure.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
