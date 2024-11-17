@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:38:02 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/15 18:52:00 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:34:53 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Ice& Ice::operator=(const Ice& src)
 
 AMateria*	Ice::clone() const
 {
+	std::cout << "Cloning Ice" << std::endl;
 	return (new Ice(*this));
 }
 

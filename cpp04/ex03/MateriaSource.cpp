@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:18:37 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/16 18:22:37 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:04:49 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,22 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& src)
 
 void	MateriaSource::learnMateria(AMateria* m)
 {
-	int i = -1;
-
-	while (i < 4 && this->_inv[++i]);
-	if (i >= 4)
+	if (!m)
+	{
+		std::cout << "Invalid materia" << std::endl;
 		return ;
-	this->_inv[i] = m->clone();
-	delete m;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (!this->_inv[i])
+		{
+			this->_inv[i] = m->clone();
+			std::cout << "Materia learned: " << m->getType() << std::endl;
+			delete m;
+			return ;
+		}
+	}
+	std::cout << "Inventory full" << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

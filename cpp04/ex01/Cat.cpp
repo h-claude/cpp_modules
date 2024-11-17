@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:14:02 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/13 18:48:56 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:27:24 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,21 @@ void	Cat::makeSound() const
 
 void	Cat::setIdea(int index, const std::string& idea)
 {
+	if (index < 0 || index >= 100)
+	{
+		std::cerr << "Class Cat : Idea index out of range!" << std::endl;
+		return ;
+	}
 	_brain->setIdea(index, idea);
 	std::cout << "Class Cat : " << _type << " has set idea!" << std::endl;
 }
 
 std::string	Cat::getIdea(int index) const
 {
+	if (index < 0 || index >= 100)
+	{
+		std::cerr << "Class Cat : Idea index out of range!" << std::endl;
+		return "";
+	}
 	return _brain->getIdea(index);
 }

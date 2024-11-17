@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:57:50 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/15 18:49:48 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:34:46 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Cure& Cure::operator=(const Cure& src)
 
 AMateria* Cure::clone() const
 {
+	std::cout << "Cloning Cure" << std::endl;
 	return new Cure(*this);
 }
 

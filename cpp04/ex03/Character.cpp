@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:18:17 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/16 18:21:00 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:03:12 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,22 @@ std::string const & Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	int i = -1;
-
 	if (m == 0)
 	{
 		std::cout << this->getName() << " cannot equip `nothing`." << std::endl;
 		return ;
 	}
-	while (i < 4 && this->_inv[++i]);
-	if (i >= 4)
+	for (int i = 0; i < 4; i++)
 	{
-		std::cout << this->getName() << " is full." << std::endl;
-		return ;
+		if (!this->_inv[i])
+		{
+			this->_inv[i] = m;
+			std::cout << this->getName() << " equipped " << m->getType() << "." << std::endl;
+			return ;
+		}
 	}
-	this->_inv[i] = m;
+	std::cout << this->getName() << " is full." << std::endl;
+	return ;
 }
 
 void	Character::unequip(int idx)
@@ -85,6 +87,7 @@ void	Character::unequip(int idx)
 		return ;
 	}
 	this->_inv[idx] = 0;
+	std::cout << this->getName() << " unequipped slot " << idx << "." << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)

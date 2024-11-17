@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 20:00:38 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/15 18:40:21 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:19:16 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Ice : public AMateria
 
 		Ice();
 		Ice(const Ice& cpy);
-		~Ice();
+		virtual ~Ice();
 
 		Ice& operator=(const Ice& src);
 

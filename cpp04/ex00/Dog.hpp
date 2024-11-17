@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:53:53 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 17:40:01 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:20:30 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
 
 		Dog();
 		Dog(const Dog& cpy);
-		~Dog();
+		virtual ~Dog();
 
 		Dog&	operator=(const Dog& src);
 

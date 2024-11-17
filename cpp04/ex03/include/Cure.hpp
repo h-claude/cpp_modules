@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:23:22 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/15 18:37:53 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:19:11 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cure : public AMateria
 
 		Cure();
 		Cure(const Cure& cpy);
-		~Cure();
+		virtual ~Cure();
 
 		Cure& operator=(const Cure& src);
 

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:14:02 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/13 18:48:50 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/17 09:43:02 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,21 @@ void	Dog::makeSound() const
 
 void	Dog::setIdea(int index, const std::string& idea)
 {
+	if (index < 0 || index >= 100)
+	{
+		std::cerr << "Class Dog : Idea index out of range!" << std::endl;
+		return ;
+	}
 	_brain->setIdea(index, idea);
 	std::cout << "Class Dog : " << _type << " has set idea!" << std::endl;
 }
 
 std::string	Dog::getIdea(int index) const
 {
+	if (index < 0 || index >= 100)
+	{
+		std::cerr << "Class Dog : Idea index out of range!" << std::endl;
+		return "";
+	}
 	return _brain->getIdea(index);
 }
