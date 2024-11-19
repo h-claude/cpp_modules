@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:53:56 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 18:29:11 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:57:07 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ class WrongCat : public WrongAnimal
 		~WrongCat();
 
 		WrongCat&	operator=(const WrongCat& src);
+
+		void	makeSound() const;
+
 };

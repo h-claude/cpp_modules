@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:53:56 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/11 18:11:54 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:57:07 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 #include "WrongAnimal.hpp"
 
@@ -24,7 +23,10 @@ class WrongCat : public WrongAnimal
 
 		WrongCat();
 		WrongCat(const WrongCat& cpy);
-		virtual ~WrongCat();
+		~WrongCat();
 
 		WrongCat&	operator=(const WrongCat& src);
+
+		void	makeSound() const;
+
 };

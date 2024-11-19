@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:14:02 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 18:30:05 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:59:32 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ WrongCat&	WrongCat::operator=(const WrongCat& cpy)
 	_type = cpy._type;
 	std::cout << "Class WrongCat : " << _type << "has been assigned!" << std::endl;
 	return *this;
+}
+
+void	WrongCat::makeSound() const
+{
+	std::cout << "Class WrongCat : " << _type << " try to make a weird sound!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:47:42 by hclaude           #+#    #+#             */
-/*   Updated: 2024/11/08 18:21:11 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/11/19 17:56:51 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
 
 		WrongAnimal& operator=(const WrongAnimal& src);
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		std::string		getType() const;
 
 	protected :
