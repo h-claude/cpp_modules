@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:36:57 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 19:27:12 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/12/11 20:04:03 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,13 @@ class Bureaucrat
 
 		class GradeTooHighException : public std::exception
 		{
+			public :
+				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
+			public :
+				const char* what() const throw();
 		};
 
 	private :

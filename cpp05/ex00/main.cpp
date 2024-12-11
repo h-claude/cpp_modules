@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:33:57 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 19:51:09 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/12/11 20:05:20 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,20 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooHighException& e)
 	{
-		std::cout << "Grade too high" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << "Grade too low" << std::endl;
-	}
+
 	std::cout << *Pierre << std::endl;
+
+	Bureaucrat* Jerome = 0;
+	try
+	{
+		Jerome = new Bureaucrat("Jerome", 150);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << *Jerome << std::endl;
+
 }
