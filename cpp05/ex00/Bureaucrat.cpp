@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:36:22 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 15:56:57 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/12/11 16:03:43 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 	return *this;
 }
 
-std::ostream	Bureaucrat::operator<<()
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& src)
+{
+
+}
