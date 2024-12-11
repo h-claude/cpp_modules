@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:36:57 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 16:00:31 by hclaude          ###   ########.fr       */
+/*   Updated: 2024/12/11 19:27:12 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ class Bureaucrat
 		void		incrGrade();
 		void		decrGrade();
 
+		class GradeTooHighException : public std::exception
+		{
+		};
+		class GradeTooLowException : public std::exception
+		{
+		};
 
 	private :
 
