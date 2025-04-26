@@ -52,5 +52,14 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp",
 		"bitset": "cpp"
+	},
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"c": true,
+		"cpp": true,
+		".cpp": true
 	}
 }
