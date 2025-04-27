@@ -6,9 +6,15 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:51:30 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:28:28 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:11:06 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
+
+# include <iostream>
+# include <string>
 
 #include "AForm.hpp"
 
@@ -30,3 +36,5 @@ class RobotomyRequestForm : public AForm
 
 		std::string _target;
 };
+
+# endif

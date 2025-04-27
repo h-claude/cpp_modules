@@ -6,11 +6,12 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:36:57 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 20:04:03 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:15:14 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string>
@@ -53,3 +54,5 @@ class Bureaucrat
 } ;
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& src);
+
+#endif

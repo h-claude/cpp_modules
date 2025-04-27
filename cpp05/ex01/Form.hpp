@@ -6,11 +6,12 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:21:35 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 12:05:12 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:13:37 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_HPP
+# define FORM_HPP
 
 #include <string>
 #include <iostream>
@@ -61,3 +62,5 @@ class Form
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& src);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:36:22 by hclaude           #+#    #+#             */
-/*   Updated: 2024/12/11 20:03:32 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 18:37:39 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ void	Bureaucrat::decrGrade()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high\n");
+	return ("Grade too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low\n");
+	return ("Grade too low");
 }

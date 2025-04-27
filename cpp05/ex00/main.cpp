@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:33:57 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 12:01:34 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 18:44:56 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 int main()
 {
-	Bureaucrat* Pierre = 0;
 	try
 	{
-		Pierre = new Bureaucrat("Pierre", 1);
+		Bureaucrat Pierre("Pierre", 1);
+		std::cout << Pierre << std::endl;
+		Pierre.setGrade(10);
+		std::cout << Pierre << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-		return (1);
 	}
 
-	std::cout << *Pierre << std::endl;
 
-	Bureaucrat* Jerome = 0;
 	try
 	{
-		Jerome = new Bureaucrat("Jerome", 150);
+		Bureaucrat Jerome("Jerome", 150);
+		std::cout << Jerome << std::endl;
+		Jerome.decrGrade();
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-		delete Pierre;
-		return (1);
 	}
-	std::cout << *Jerome << std::endl;
-	delete Pierre;
-	delete Jerome;
 }

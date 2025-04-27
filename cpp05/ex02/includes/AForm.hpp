@@ -6,11 +6,13 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:21:35 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:28:18 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:09:29 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef AFORM_HPP
+# define AFORM_HPP
+
 
 #include <string>
 #include <iostream>
@@ -62,3 +64,5 @@ class AForm
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& src);
+
+#endif

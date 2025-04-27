@@ -6,11 +6,15 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:40:33 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:07:16 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:02:39 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
+
+#include <iostream>
+#include <string>
 
 #include "AForm.hpp"
 
@@ -33,3 +37,5 @@ class PresidentialPardonForm : public AForm
 		std::string _target;
 
 };
+
+# endif

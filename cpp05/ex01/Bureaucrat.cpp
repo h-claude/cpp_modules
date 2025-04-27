@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:36:22 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 11:56:36 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 18:37:09 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void		Bureaucrat::setGrade(int grade)
 
 void	Bureaucrat::incrGrade()
 {
-	this->setGrade(--_grade);
+	this->setGrade(-1);
 }
 
 void	Bureaucrat::decrGrade()
 {
-	this->setGrade(++_grade);
+	this->setGrade(1);
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

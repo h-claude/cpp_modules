@@ -6,10 +6,15 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:27:29 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:28:41 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 14:11:24 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
+
+#include <iostream>
+#include <string>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
@@ -30,3 +35,5 @@ class ShrubberyCreationForm : public AForm
 
 		std::string _target;
 };
+
+# endif

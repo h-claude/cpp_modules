@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 11:56:49 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 12:39:21 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 19:37:49 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,8 @@ int main()
 		{
 			Form formb(25,25,"formb");
 			std::cout << formb << std::endl;
-			try
-			{
-				Bureaucrat alain("alain", 1);
-				alain.signForm(formb);
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << std::endl;
-				return (1);
-			}
-
+			Bureaucrat alain("alain", 1);
+			alain.signForm(formb);
 		}
 		catch(const std::exception& e)
 		{
@@ -40,42 +31,20 @@ int main()
 	{
 		try
 		{
-			Form formc(1, 5, "formc");
-			try
-			{
-				Form forma(13, 13, "forma");
+			Form formc(13, 53, "formc");
 
-				std::cout << formc << std::endl;
-				std::cout << forma << std::endl;
+			Form forma(1, 1, "forma");
 
-				try
-				{
-					Bureaucrat	Alain("Alain", 1);
-					Alain.signForm(formc);
-					forma = formc;
-					std::cout << forma << std::endl;
-					std::cout << formc << std::endl;
-					try
-					{
-						Form formd(forma);
-						std::cout << formd << std::endl;
-					}
-					catch(const std::exception& e)
-					{
-						std::cerr << e.what() << std::endl;
-					}
-				}
-				catch(const std::exception& e)
-				{
-					std::cerr << e.what() << std::endl;
-				}
-
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << std::endl;
-				return (1);
-			}
+			std::cout << formc << std::endl;
+			std::cout << forma << std::endl;
+			Bureaucrat	Alain("Alain", 13);
+			Alain.signForm(formc);
+			Alain.signForm(forma);
+			forma = formc;
+			std::cout << forma << std::endl;
+			std::cout << formc << std::endl;
+			Form formd(forma);
+			std::cout << formd << std::endl;
 		}
 		catch(const std::exception& e)
 		{
