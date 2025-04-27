@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 15:29:22 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 19:46:51 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 22:09:36 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,22 @@ int main()
 	{
 		try
 		{
-			Bureaucrat AlainLabruti("Alain", 53);
+			Bureaucrat AlainLabruti("AlainLabruti", 53);
 			Intern	lintern;
-			AForm*	forma = lintern.makeForm("ShrubberyCreationForm", "Moi");
+			AForm*	forma = lintern.makeForm("robotomy request", "Moi");
 
-			AlainLabruti.signForm(*forma);
-			forma->execute(AlainLabruti);
-
+			if (forma)
+			{
+				AlainLabruti.signForm(*forma);
+				AlainLabruti.executeForm(*forma);
+				delete forma;
+			}
 			AForm*	formc = lintern.makeForm("merde", "ludo");
-			AlainLabruti.signForm(*formc);
+			if (formc)
+			{
+				AlainLabruti.signForm(*formc);
+				delete formc;
+			}
 		}
 		catch(const std::exception& e)
 		{

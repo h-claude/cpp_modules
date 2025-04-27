@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:36:22 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:27:10 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 21:48:38 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,22 @@ void Bureaucrat::signForm(AForm& form)
 	{
 		std::cerr << _name << " couldn't sign " << form.getName() << " because: " << e.what() << std::endl;
 		return ;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm& form) const
+{
+	try
+	{
+		if (!form.getisSigned())
+			throw std::runtime_error("Form is not signed");
+		if (form.getGradeToExecute() < _grade)
+			throw Bureaucrat::GradeTooLowException();
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 }

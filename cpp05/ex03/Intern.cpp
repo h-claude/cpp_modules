@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:18:42 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 17:56:17 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 22:08:03 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,25 @@ AForm* createShrubberyCreationForm(const std::string& target)
 
 AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 {
-	std::map<std::string, AForm* (*)(const std::string&)> formCreators;
+	AForm* (*functions[])(const std::string&) = {
+		createPresidentialPardonForm,
+		createRobotomyRequestForm,
+		createShrubberyCreationForm
+	};
+	std::string formNames[] = {
+		"presidential pardon",
+		"robotomy request",
+		"shrubbery creation"
+	};
 
-	formCreators["PresidentialPardonForm"] = createPresidentialPardonForm;
-	formCreators["RobotomyRequestForm"] = createRobotomyRequestForm;
-	formCreators["ShrubberyCreationForm"] = createShrubberyCreationForm;
-
-	std::map<std::string, AForm* (*)(const std::string&)>::iterator itMap = formCreators.find(formName);
-	if (itMap == formCreators.end())
-		throw std::runtime_error("Form " + formName + " doesnt exist.\n");
-	else
+	for (int i = 0; i < 3; i++)
 	{
-		std::cout << "Intern creates " << itMap->first << std::endl;
-		return (itMap->second(target));
+		if (formNames[i] == formName)
+		{
+			std::cout << "Intern creates " << formName << std::endl;
+			return (functions[i](target));
+		}
 	}
+	std::cerr << "Intern cannot create form: " << formName << std::endl;
+	return (0);
 }

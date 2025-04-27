@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 21:18:47 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 17:53:37 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 21:51:48 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include "PresidentialPardonForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "ShrubberyCreationForm.hpp"
-# include <map>
-# include <iterator>
 
 class AForm;
 

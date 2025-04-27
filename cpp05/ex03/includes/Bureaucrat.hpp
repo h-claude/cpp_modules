@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:36:57 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 13:59:19 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/27 21:41:45 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ class Bureaucrat
 			public :
 				const char* what() const throw();
 		};
+
+		void	executeForm(const AForm& form) const;
 
 	private :
 
