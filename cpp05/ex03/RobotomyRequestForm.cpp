@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:54:39 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/26 15:28:35 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/30 22:33:25 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,17 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 
 void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
+	srand(time(0));
 	if (!this->getisSigned())
 		throw std::runtime_error("The form is not signed.");
 	if (executor.getGrade() <= this->getGradeToExecute())
-		std::cout << _target << " has been robotomized successfully 50% of the time" << std::endl;
-	else
-		throw RobotomyRequestForm::GradeTooLowException();
+	{
+		std::cout << "*drilling noises*" << std::endl;
+		if (rand() % 2)
+			std::cout << _target << " has been robotomized successfully." << std::endl;
+		else
+			std::cout << "Robotomy failed for " << _target << "." << std::endl;
+	}
 }
 
 std::string	RobotomyRequestForm::getTarget() const

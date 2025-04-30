@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:27:29 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 14:11:24 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/30 22:27:17 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
