@@ -6,23 +6,25 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:50:37 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/30 22:16:21 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:11:54 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm(25, 5, "PresidentialPardonForm"), _target("default")
+PresidentialPardonForm::PresidentialPardonForm() : AForm(25, 5, "PresidentialPardonForm")
 {
+	setTarget("default");
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm(25,5, "PresidentialPardonForm")
 {
-	_target = target;
+	setTarget(target);
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& src) : AForm(src), _target(src.getTarget())
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& src) : AForm(src)
 {
+	setTarget(src.getTarget());
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){}
@@ -31,13 +33,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 {
 	if (this == &src)
 		return (*this);
-	_target = src.getTarget();
+	setTarget(src.getTarget());
 	return (*this);
-}
-
-std::string	PresidentialPardonForm::getTarget() const
-{
-	return (_target);
 }
 
 void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
@@ -45,7 +42,7 @@ void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 	if (!this->getisSigned())
 		throw std::runtime_error("The form is not signed.");
 	if (executor.getGrade() <= this->getGradeToExecute())
-		std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+		std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	else
 		throw PresidentialPardonForm::GradeTooLowException();
 }

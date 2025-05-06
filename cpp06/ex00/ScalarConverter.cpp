@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:33:27 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 23:59:48 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/04/30 14:49:07 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,108 +27,117 @@ ScalarConverter ScalarConverter::operator=(const ScalarConverter& src)
 
 bool	isFloat(std::string& str)
 {
-	try
+	if (!str.empty() && str[str.size() - 1] == 'f')
 	{
-		float f = std::stof(str);
-		f++;
-		return (true);
+		std::string	str_withoutF = str.substr(0, str.size() - 1);
+		std::istringstream iss(str_withoutF);
+		float	value;
+		return ((iss >> value) && (iss.eof()));
 	}
-	catch (const std::exception& e)
-	{
-		return (false);
-	}
-
+	return (false);
 }
 
 bool	isDouble(std::string& str)
 {
-	try
-	{
-		double d = std::stod(str);
-		d++;
-		return (true);
-	}
-	catch(const std::exception& e)
-	{
-		return (false);
-	}
+	std::istringstream iss(str);
+	double	value;
+
+	return (iss >> value) && (iss.eof());
 }
 
 bool	isInt(std::string& str)
 {
-	try
-	{
-		int i = std::stoi(str);
-		i++;
-		return true;
-	}
-	catch(const std::exception& e)
-	{
-		return false;
-	}
+	std::istringstream iss(str);
+	int	value;
 
+	return (iss >> value) && (iss.eof());
 }
 
 void	print_int(std::string& str)
 {
+	std::istringstream	iss(str);
+	int					value;
+	bool				printable;
+
+	printable = true;
+	if (!(iss >> value) || !iss.eof())
+		printable = false;
+
 	// CHAR
-	try
-	{
-		int	i = std::stoi(str);
-		if (i >= 32 && i <= 126)
-			std::cout << "char: Non displayable" << std::endl;
-		else
-			std::cout << "char: " << (char)i << std::endl;
-	}
-	catch(const std::out_of_range& e)
-	{
+	if (value < 32 || value > 126)
 		std::cout << "char: Non displayable" << std::endl;
-	}
+	else if (printable == true)
+		std::cout << "char: " << static_cast<char>(value) << std::endl;
+
 	// INT
-	try
-	{
-		int i = std::stoi(str);
-		std::cout << "int: " << i << std::endl;
-	}
-	catch(const std::exception& e)
-	{
+	if (printable)
+		std::cout << "int: " << value << std::endl;
+	else
 		std::cout << "int: impossible" << std::endl;
-	}
+
 	// FLOAT
-	try
-	{
-		std::cout << "float: ";
-		int i = std::stoi(str);
-		std::cout << (float)i << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "impossible" << std::endl;
-	}
+	if (printable)
+		std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(value) << "f" << std::endl;
+	else
+		std::cout << "float: impossible" << std::endl;
+
 	// DOUBLE
-	try
-	{
-		std::cout << "double: ";
-		int i = std::stoi(str);
-		std::cout << (double)i << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "impossible" << std::endl;
-	}
+	if (printable)
+		std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
+	else
+		std::cout << "double: impossible" << std::endl;
+}
+
+void	print_float(std::string& str)
+{
+	std::string	str_withoutF = str.substr(0, str.size() - 1);
+	std::istringstream iss(str_withoutF);
+
+	float				value;
+	bool				printable;
+
+	printable = true;
+	if (!(iss >> value) || !iss.eof())
+		printable = false;
+
+	std::cout << "float" << std::endl;
+
+	// char
+	if (value < 32 || value > 126)
+		std::cout << "char: Non displayable" << std::endl;
+	else if (printable == true)
+		std::cout << "char: " << static_cast<char>(value) << std::endl;
+
+	// INT
+	if (printable)
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
+
+	// FLOAT
+	if (printable)
+		std::cout << std::fixed << std::setprecision(1) << "float: " << value << "f" << std::endl;
+	else
+		std::cout << "float: impossible" << std::endl;
+
+	// DOUBLE
+	if (printable)
+		std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
+	else
+		std::cout << "double: impossible" << std::endl;
 }
 
 void ScalarConverter::convert(std::string& str)
 {
-	// connard de fonction interdite 
+	// connard de fonction interdite
 	if (isInt(str))
 	{
 		print_int(str);
 	}
-	//else if (isFloat(str))
-	//{
-	//	print_float(str);
-	//}
+	else if (isFloat(str))
+	{
+		print_float(str);
+	}
 	//else if (isDouble(str))
 	//{
 	//	print_double(str);

@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:27:29 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/30 22:27:17 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:21:48 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& src);
 
 		void		execute(const Bureaucrat& executor) const;
-		std::string	getTarget() const;
-
-	private :
-
-		std::string _target;
 };
 
 # endif

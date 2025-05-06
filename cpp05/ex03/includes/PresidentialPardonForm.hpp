@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:40:33 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 14:02:39 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:21:52 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& src);
 
 		void	execute(const Bureaucrat& executor) const;
-		std::string	getTarget() const;
-
-	private :
-
-		std::string _target;
-
 };
 
 # endif
