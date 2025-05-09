@@ -6,13 +6,12 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:21:35 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 14:09:29 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:22:04 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 # define AFORM_HPP
-
 
 #include <string>
 #include <iostream>
@@ -33,12 +32,14 @@ class AForm
 
 		// setter
 		void		setIsSigned(const bool isSigned);
+		void		setTarget(const std::string& target);
 
 		// getter
 		const std::string	getName() const;
 		bool				getisSigned() const;
 		int					getGradeToSign() const;
 		int					getGradeToExecute() const;
+		std::string	getTarget() const;
 
 		// exception
 		class GradeTooHighException : public std::exception
@@ -57,6 +58,7 @@ class AForm
 
 	private :
 
+		std::string			_target;
 		const std::string	_name;
 		bool				_isSigned;
 		const int			_gradeToSign;

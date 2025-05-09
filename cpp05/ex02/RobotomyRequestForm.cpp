@@ -6,22 +6,25 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:54:39 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/30 22:33:25 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:12:29 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm(72, 45, "RobotomyRequestForm"), _target("default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm(72, 45, "RobotomyRequestForm")
 {
+	setTarget("default");
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm(72, 45, "RobotomyRequestForm"), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm(72, 45, "RobotomyRequestForm")
 {
+	setTarget(target);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& cpy) : AForm(cpy), _target(cpy.getTarget())
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& cpy) : AForm(cpy)
 {
+	setTarget(cpy.getTarget());
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -32,7 +35,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 {
 	if (this == &src)
 		return (*this);
-	_target = src.getTarget();
+	setTarget(src.getTarget());
 	return (*this);
 }
 
@@ -45,13 +48,8 @@ void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	{
 		std::cout << "*drilling noises*" << std::endl;
 		if (rand() % 2)
-			std::cout << _target << " has been robotomized successfully." << std::endl;
+			std::cout << getTarget() << " has been robotomized successfully." << std::endl;
 		else
-			std::cout << "Robotomy failed for " << _target << "." << std::endl;
+			std::cout << "Robotomy failed for " << getTarget() << "." << std::endl;
 	}
-}
-
-std::string	RobotomyRequestForm::getTarget() const
-{
-	return (_target);
 }

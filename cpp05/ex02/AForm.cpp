@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:44:10 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 19:53:02 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:22:11 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,26 @@ void	AForm::beSigned(Bureaucrat& bureaucrat)
 
 const	char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("Form grade too high");
+	return ("Form grade too high\n");
 }
 
 const	char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("Form grade too low");
+	return ("Form grade too low\n");
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& src)
 {
 	os << src.getName() << ", form grade to sign " << src.getGradeToSign() << ", grade to execute " << src.getGradeToExecute() << ", is signed " << std::boolalpha << src.getisSigned() << ".";
 	return os;
+}
+
+void AForm::setTarget(const std::string& target)
+{
+	_target = target;
+}
+
+std::string AForm::getTarget() const
+{
+	return _target;
 }

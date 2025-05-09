@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 15:29:22 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 22:09:36 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:26:40 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int main()
 	{
 		try
 		{
-			Bureaucrat AlainLabruti("AlainLabruti", 53);
+			Bureaucrat AlainLabruti("AlainLabruti", 10);
 			Intern	lintern;
-			AForm*	forma = lintern.makeForm("robotomy request", "Moi");
+			AForm*	forma = lintern.makeForm("shrubbery creation", "Moi");
 
 			if (forma)
 			{

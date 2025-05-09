@@ -6,16 +6,17 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:51:30 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/27 14:11:06 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:22:25 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
-# include <iostream>
-# include <string>
-
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
@@ -30,11 +31,6 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& src);
 
 		void	execute(const Bureaucrat& executor) const;
-		std::string	getTarget() const;
-
-	private :
-
-		std::string _target;
 };
 
-# endif
+#endif
