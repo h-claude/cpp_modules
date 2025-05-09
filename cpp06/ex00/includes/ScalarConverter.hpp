@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:20:04 by hclaude           #+#    #+#             */
-/*   Updated: 2025/04/30 14:14:55 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/09 14:33:12 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ScalarConverter
 		ScalarConverter(const ScalarConverter& cpy);
 		~ScalarConverter();
 
-		ScalarConverter	operator=(const ScalarConverter& src);
+		ScalarConverter&	operator=(const ScalarConverter& src);
 
 	public:
 
