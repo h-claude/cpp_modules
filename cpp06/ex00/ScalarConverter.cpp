@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:33:27 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/09 14:58:50 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/09 15:19:24 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,20 @@ void	print_int(std::string& str)
 {
 	std::istringstream	iss(str);
 	int					value;
-	bool				printable;
 
-	printable = true;
 	if (!(iss >> value) || !iss.eof())
-		printable = false;
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
 
 	// CHAR
 	if (value < 0 || value > 127)
 		std::cout << "char: impossible" << std::endl;
-	else if (printable == true && isprint(static_cast<char>(value)))
+	else if (isprint(static_cast<char>(value)))
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	else
 	{
@@ -88,22 +92,13 @@ void	print_int(std::string& str)
 	}
 
 	// INT
-	if (printable && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
+	if (value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
 		std::cout << "int: " << value << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
 
-	// FLOAT
-	if (printable && value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
-		std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(value) << "f" << std::endl;
-	else
-		std::cout << "float: impossible" << std::endl;
-
-	// DOUBLE
-	if (printable && value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
-		std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
-	else
-		std::cout << "double: impossible" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
 }
 
 void	print_float(std::string& str)
@@ -112,16 +107,20 @@ void	print_float(std::string& str)
 	std::istringstream iss(str_withoutF);
 
 	float				value;
-	bool				printable;
 
-	printable = true;
 	if (!(iss >> value) || !iss.eof())
-		printable = false;
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
 
 	// char
 	if (value < 0 || value > 127)
 		std::cout << "char: impossible" << std::endl;
-	else if (printable == true && isprint(static_cast<char>(value)))
+	else if (isprint(static_cast<char>(value)))
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	else
 	{
@@ -129,19 +128,19 @@ void	print_float(std::string& str)
 	}
 
 	// INT
-	if (printable && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
+	if (value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
 
 	// FLOAT
-	if (printable && value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
+	if (value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
 		std::cout << std::fixed << std::setprecision(1) << "float: " << value << "f" << std::endl;
 	else
 		std::cout << "float: impossible" << std::endl;
 
 	// DOUBLE
-	if (printable && value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
+	if (value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
 		std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
@@ -151,16 +150,19 @@ void	print_double(std::string& str)
 {
 	std::istringstream iss(str);
 	double				value;
-	bool				printable;
 
-	printable = true;
 	if (!(iss >> value) || !iss.eof())
-		printable = false;
-
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
 	// char
 	if (value < 0 || value > 127)
 		std::cout << "char: impossible" << std::endl;
-	else if (printable == true && isprint(static_cast<char>(value)))
+	else if (isprint(static_cast<char>(value)))
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	else
 	{
@@ -168,19 +170,19 @@ void	print_double(std::string& str)
 	}
 
 	// INT
-	if (printable && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
+	if (value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max())
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
 
 	// FLOAT
-	if (printable && value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
+	if (value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
 		std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(value) << "f" << std::endl;
 	else
 		std::cout << "float: impossible" << std::endl;
 
 	// DOUBLE
-	if (printable && value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
+	if (value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
 		std::cout << std::fixed << std::setprecision(1) << "double: " << value << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
