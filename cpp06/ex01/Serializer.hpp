@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 15:19:21 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/05 16:07:04 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/12 16:30:20 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define SERIALIZER_HPP
 
 # include <iostream>
-# include <cstdint>
 # include <string>
 # include "Data.hpp"
 
+typedef unsigned long uintptr_t;
 
 class Serializer
 {

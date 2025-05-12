@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:24:55 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/05 16:54:32 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/12 16:34:33 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "includes/A.hpp"
 #include "includes/B.hpp"
 #include "includes/C.hpp"
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 Base* generate(void)
 {
@@ -61,7 +64,7 @@ void identify(Base& p)
 		std::cout << "A" << std::endl;
 		return;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 
@@ -71,7 +74,7 @@ void identify(Base& p)
 		std::cout << "B" << std::endl;
 		return;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 
@@ -81,7 +84,7 @@ void identify(Base& p)
 		std::cout << "C" << std::endl;
 		return;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 

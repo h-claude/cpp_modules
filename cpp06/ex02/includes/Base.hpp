@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:20:39 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/05 16:22:31 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/12 16:35:31 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Base
 {
 	public:
-		virtual ~Base() {}
+		virtual ~Base();
 };
 
 #endif

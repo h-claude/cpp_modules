@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:33:27 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/09 15:19:24 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/12 16:17:35 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,13 +134,13 @@ void	print_float(std::string& str)
 		std::cout << "int: impossible" << std::endl;
 
 	// FLOAT
-	if (value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
+	if (value >= -std::numeric_limits<float>::max() && value <= std::numeric_limits<float>::max())
 		std::cout << std::fixed << std::setprecision(1) << "float: " << value << "f" << std::endl;
 	else
 		std::cout << "float: impossible" << std::endl;
 
 	// DOUBLE
-	if (value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
+	if (value >= -std::numeric_limits<double>::max() && value <= std::numeric_limits<double>::max())
 		std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(value) << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
@@ -176,13 +176,13 @@ void	print_double(std::string& str)
 		std::cout << "int: impossible" << std::endl;
 
 	// FLOAT
-	if (value >= std::numeric_limits<float>::lowest() && value <= std::numeric_limits<float>::max())
+	if (value >= -std::numeric_limits<float>::max() && value <= std::numeric_limits<float>::max())
 		std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(value) << "f" << std::endl;
 	else
 		std::cout << "float: impossible" << std::endl;
 
 	// DOUBLE
-	if (value >= std::numeric_limits<double>::lowest() && value <= std::numeric_limits<double>::max())
+	if (value >= -std::numeric_limits<double>::max() && value <= std::numeric_limits<double>::max())
 		std::cout << std::fixed << std::setprecision(1) << "double: " << value << std::endl;
 	else
 		std::cout << "double: impossible" << std::endl;
