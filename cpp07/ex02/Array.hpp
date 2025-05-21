@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:24:05 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/21 21:20:57 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/21 21:27:59 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ class Array
 
 	public :
 
-		Array(): _size(0), _array(0);
-		Array(const unsigned int n): _size(n), _array(new T[n]());
+		Array(): _size(0), _array(0){}
+		Array(const unsigned int n): _size(n), _array(new T[n]()){}
 		Array(const Array& cpy)
 		{
 			_size = cpy._size;
-			_array = new T[cpy._size]
+			_array = new T[cpy._size];
 			for (size_t i = 0; i < _size; ++i)
-				_array[i] = src._array[i];
+				_array[i] = cpy._array[i];
 		}
 		~Array()
 		{
 			delete[] _array;
 		}
 
-		Array operator=(const Array& src);
+		Array operator=(const Array& src)
 		{
 			if (this != &src)
 			{
