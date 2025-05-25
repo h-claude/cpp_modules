@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
 	{
@@ -15,27 +15,38 @@ int main(int, char**)
 			numbers[i] = value;
 			mirror[i] = value;
 		}
-		//SCOPE
+		std::cout << "numbers: ";
+		for (int i = 0; i < MAX_VAL; i++)
 		{
-			Array<int> tmp = numbers;
-			Array<int> test(tmp);
+			std::cout << numbers[i] << " ";
 		}
+		std::cout << std::endl;
+		std::cout << "mirror:  ";
+		for (int i = 0; i < MAX_VAL; i++)
+		{
+			std::cout << mirror[i] << " ";
+		}
+		std::cout << std::endl;
+		//SCOPE
+		Array<int> tmp = numbers;
+		Array<int> test(tmp);
 
 		for (int i = 0; i < MAX_VAL; i++)
 		{
-			if (mirror[i] != numbers[i])
+			if (mirror[i] != tmp[i])
 			{
 				std::cerr << "didn't save the same value!!" << std::endl;
 				return 1;
 			}
 		}
+		std::cout << "All values are the same!" << std::endl;
 		try
 		{
 			numbers[-2] = 0;
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		try
 		{
@@ -43,7 +54,7 @@ int main(int, char**)
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 
 		for (int i = 0; i < MAX_VAL; i++)

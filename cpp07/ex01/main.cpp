@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:28:01 by hclaude           #+#    #+#             */
-/*   Updated: 2025/05/05 17:55:37 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/05/25 19:41:12 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int main()
 	std::cout << "After incrementing the array of integers: ";
 	for (int i = 0; i < 5; i++)
 		std::cout << tab[i] << " ";
-		std::cout << std::endl;
-
+	std::cout << std::endl;
 	std::string str = "Hello, World!";
 	std::cout << "Before incrementing the string: " << str << std::endl;
 	::iter(const_cast<char*>(str.c_str()), str.length(), ::test);
