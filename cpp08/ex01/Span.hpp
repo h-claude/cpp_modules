@@ -6,7 +6,7 @@
 /*   By: hclaude <hclaude@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:18:36 by hclaude           #+#    #+#             */
-/*   Updated: 2025/06/06 17:26:58 by hclaude          ###   ########.fr       */
+/*   Updated: 2025/06/09 23:38:18 by hclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <limits>
 #include <stdexcept>
 #include <ctime>
+#include <algorithm>
 
 class Span
 {
